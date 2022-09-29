@@ -14,10 +14,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setListeners()
-
     }
-
     private fun makeColored(view: View) {
+
         when (view.id) {
 
             // Boxes using Color class colors for the background
@@ -26,31 +25,26 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
-
             R.id.red_button -> clickableViews.find { it.id == R.id.box_three_text }?.setBackgroundResource(R.color.my_red)
             R.id.yellow_button -> clickableViews.find { it.id == R.id.box_four_text }?.setBackgroundResource(R.color.my_yellow)
             R.id.green_button -> clickableViews.find { it.id == R.id.box_five_text }?.setBackgroundResource(R.color.my_green)
 
-            else -> view.setBackgroundColor(Color.LTGRAY)
 
+            else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
-
     private fun setListeners() {
         val redButton = findViewById<Button>(R.id.red_button)
         val greenButton = findViewById<Button>(R.id.green_button)
         val yellowButton = findViewById<Button>(R.id.yellow_button)
-
 
         val boxOneText = findViewById<TextView>(R.id.box_one_text)
         val boxTwoText = findViewById<TextView>(R.id.box_two_text)
         val boxThreeText = findViewById<TextView>(R.id.box_three_text)
         val boxFourText = findViewById<TextView>(R.id.box_four_text)
         val boxFiveText = findViewById<TextView>(R.id.box_five_text)
-
         val rootConstraintLayout = findViewById<View>(R.id.constraint_layout)
-
-      clickableViews =
+        clickableViews =
             listOf(boxOneText, boxTwoText, boxThreeText,
                 boxFourText, boxFiveText, rootConstraintLayout,
                 redButton, greenButton, yellowButton
@@ -61,4 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
+
 }
